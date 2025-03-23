@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../Button/Button';
+import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
 import './Hero.scss';
 
 const Hero = () => {
@@ -90,6 +91,8 @@ const Hero = () => {
       <canvas ref={canvasRef} className="hero__canvas" />
       
       <div className="container hero__container">
+        <AnimatedLogo />
+        
         <motion.h1 
           className="hero__title"
           initial={{ opacity: 0, y: 20 }}

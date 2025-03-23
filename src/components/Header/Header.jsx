@@ -18,7 +18,7 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          C<span className="blue-o">O</span>DE CLASH
+          C<span className="blue-o">O</span>DECLASH
         </motion.a>
         
         <div className="header__right">
@@ -35,7 +35,7 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ul className="header__nav-list">
-              {['Courses', 'Leaderboard', 'About Us'].map((item, index) => (
+              {['Leaderboard', 'About Us'].map((item, index) => (
                 <motion.li 
                   key={item} 
                   className="header__nav-item"

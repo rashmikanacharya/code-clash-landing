@@ -1,0 +1,14 @@
+
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.animated-logo {
+  max-width: 300px;
+  margin: $spacing-lg auto;
+  
+  &__image {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba($primary-color, 0.5));
+  }
+}
