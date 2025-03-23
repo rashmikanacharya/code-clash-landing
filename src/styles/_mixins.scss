@@ -1,0 +1,167 @@
+
+// Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Flex layouts
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Glass Morphism
+@mixin glass-morphism {
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  -webkit-backdrop-filter: $glass-blur;
+  border: $glass-border;
+  box-shadow: $glass-shadow;
+}
+
+// Text Styling
+@mixin heading-1 {
+  font-family: $font-primary;
+  font-size: $font-size-4xl;
+  font-weight: 700;
+  line-height: 1.2;
+  
+  @include mobile {
+    font-size: $font-size-2xl;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $font-primary;
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  line-height: 1.25;
+  
+  @include mobile {
+    font-size: $font-size-xl;
+  }
+}
+
+@mixin heading-3 {
+  font-family: $font-primary;
+  font-size: $font-size-2xl;
+  font-weight: 600;
+  line-height: 1.3;
+  
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin code-text {
+  font-family: $font-code;
+  font-size: $font-size-base;
+  line-height: 1.6;
+}
+
+// Animation Helpers
+@mixin hover-scale {
+  transition: transform $transition-normal;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Card Styles
+@mixin card-base {
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Button Styles
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: $font-primary;
+  font-weight: 600;
+  border-radius: $border-radius-md;
+  transition: all $transition-normal;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $primary-color;
+  color: $text-white;
+  
+  &:hover {
+    background-color: $primary-dark;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Container with max-width
+@mixin container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include tablet {
+    padding: 0 $spacing-lg;
+  }
+  
+  @include desktop {
+    padding: 0 $spacing-xl;
+  }
+}

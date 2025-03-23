@@ -1,0 +1,54 @@
+
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px; // Account for fixed header
+  overflow: hidden;
+  
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-index-negative;
+  }
+  
+  &__container {
+    height: calc(100vh - 80px);
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: $spacing-xl $spacing-md;
+  }
+  
+  &__title {
+    @include heading-1;
+    margin-bottom: $spacing-lg;
+    line-height: 1.2;
+    max-width: 800px;
+    
+    span {
+      display: inline;
+    }
+  }
+  
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    max-width: 600px;
+    margin-bottom: $spacing-2xl;
+    
+    @include mobile {
+      font-size: $font-size-base;
+    }
+  }
+  
+  &__cta {
+    margin-top: $spacing-lg;
+  }
+}
