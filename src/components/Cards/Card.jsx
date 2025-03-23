@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Robot, Swords } from 'lucide-react';
+import { Bot, Swords } from 'lucide-react';
 import './Card.scss';
 
 const Card = ({ title, description, icon, index, iconColor, bgColor }) => {
@@ -54,7 +54,7 @@ const CardsSection = () => {
     {
       title: 'Solo',
       description: 'Practice coding with interactive challenges at your own pace. Solve problems, build projects, and improve your skills in a supportive environment.',
-      icon: <Robot size={40} />,
+      icon: <Bot size={40} />,
       bgColor: '#F44336', // Red background
       iconColor: 'white' // White icon
     },
