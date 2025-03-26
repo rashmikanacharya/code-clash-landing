@@ -95,7 +95,7 @@ const ModernHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Ignite your <span className="accent">code</span>, conquer the <span className="accent">arena</span>
+            Ignite your code, conquer the arena
           </motion.h1>
           
           <motion.p 
@@ -114,7 +114,6 @@ const ModernHero = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <Button text="Get Started" isMain={true} />
-            <button className="modern-hero__secondary-btn">Learn More</button>
           </motion.div>
         </div>
         
@@ -125,9 +124,6 @@ const ModernHero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="modern-hero__glow"></div>
-          <div className="modern-hero__floating-element modern-hero__floating-element--1"></div>
-          <div className="modern-hero__floating-element modern-hero__floating-element--2"></div>
-          <div className="modern-hero__floating-element modern-hero__floating-element--3"></div>
         </motion.div>
       </div>
     </section>
