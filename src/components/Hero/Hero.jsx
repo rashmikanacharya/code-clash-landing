@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../Button/Button';
 import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
-import './Hero.scss';
+import './Hero.css';
 
 const Hero = () => {
   const canvasRef = useRef(null);

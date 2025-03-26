@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import './Button.scss';
+import './Button.css';
 
 const Button = ({ text, onClick, isMain = false, className = '' }) => {
   return (

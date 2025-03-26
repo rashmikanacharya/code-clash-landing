@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import './AnimatedLogo.scss';
+import './AnimatedLogo.css';
 
 const AnimatedLogo = () => {
   const logoVariants = {

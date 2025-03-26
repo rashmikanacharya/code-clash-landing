@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Swords } from 'lucide-react';
-import './Card.scss';
+import './Card.css';
 
 const Card = ({ title, description, icon, index, iconColor, bgColor }) => {
   const [isFlipped, setIsFlipped] = useState(false);

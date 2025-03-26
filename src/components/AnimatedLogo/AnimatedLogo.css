@@ -1,0 +1,11 @@
+
+.animated-logo {
+  max-width: 300px;
+  margin: 1.5rem auto;
+}
+
+.animated-logo__image {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(77, 144, 214, 0.5));
+}
