@@ -6,11 +6,11 @@
   width: 100%;
   z-index: 1000;
   height: 80px;
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: rgba(18, 18, 18, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header__container {
@@ -23,13 +23,17 @@
 .header__logo {
   font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  color: #333333;
+  color: #f0f0f0;
 }
 
 .header__logo .blue-o {
-  color: #3A78B5;
+  color: #4D90D6;
+  background: linear-gradient(90deg, #4D90D6, #6eb2fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .header__right {
@@ -54,9 +58,10 @@
 }
 
 .header__nav-item a {
-  color: #333333;
+  color: #a8b2d1;
   font-weight: 500;
   font-size: 0.875rem;
+  transition: color 0.3s ease;
 }
 
 .header__nav-item a::after {
@@ -66,12 +71,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #3A78B5;
+  background: linear-gradient(90deg, #4D90D6, #6eb2fb);
   transition: width 0.3s ease;
 }
 
 .header__nav-item a:hover {
-  color: #3A78B5;
+  color: #ffffff;
 }
 
 .header__nav-item a:hover::after {
@@ -85,19 +90,19 @@
   padding: 0.5rem 1.25rem;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   transition: all 0.3s ease;
   cursor: pointer;
-  background-color: #3A78B5;
+  background: linear-gradient(90deg, #4D90D6, #6eb2fb);
   color: #FFFFFF;
   font-size: 0.875rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px rgba(77, 144, 214, 0.2);
 }
 
 .header__login-btn:hover {
-  background-color: #2A5F8C;
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(77, 144, 214, 0.3);
 }
 
 .header__login-btn:active {
@@ -116,7 +121,7 @@
 .header__mobile-toggle span {
   height: 2px;
   width: 100%;
-  background-color: #333333;
+  background-color: #f0f0f0;
   transition: all 0.3s ease;
 }
 
@@ -131,14 +136,15 @@
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: rgba(18, 18, 18, 0.95);
     padding: 1.5rem 0;
     margin: 0;
     transform: translateY(-100%);
     opacity: 0;
     transition: all 0.3s ease;
     pointer-events: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
   }
   
   .header__nav.active {
