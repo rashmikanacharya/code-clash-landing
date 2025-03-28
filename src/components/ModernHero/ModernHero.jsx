@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Check } from 'lucide-react';
 import Button from '../Button/Button';
 import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
 import './ModernHero.css';
@@ -24,8 +25,8 @@ const ModernHero = () => {
     // Create gradient background
     const createGradient = () => {
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(30, 30, 50, 1)');
-      gradient.addColorStop(1, 'rgba(20, 20, 40, 1)');
+      gradient.addColorStop(0, 'rgba(20, 20, 35, 1)');
+      gradient.addColorStop(1, 'rgba(10, 15, 28, 1)');
       return gradient;
     };
     
@@ -74,6 +75,25 @@ const ModernHero = () => {
     };
   }, []);
   
+  const features = [
+    'Master Python, Java, JavaScript, and more',
+    'Real-time feedback on your code',
+    'Battle against other programmers'
+  ];
+
+  const pythonCode = `def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Example usage
+numbers = [3, 6, 8, 10, 1, 2, 1]
+print(quick_sort(numbers))  # Output: [1, 1, 2, 3, 6, 8, 10]`;
+
   return (
     <section className="modern-hero">
       <canvas ref={canvasRef} className="modern-hero__canvas"></canvas>
@@ -95,7 +115,7 @@ const ModernHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Ignite your code, conquer the arena
+            Elevate your <span className="accent">coding skills</span> in the arena
           </motion.h1>
           
           <motion.p 
@@ -104,8 +124,24 @@ const ModernHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            Master programming through interactive challenges and competitive coding battles
+            Master programming through interactive challenges and competitive coding battles with Python, Java, and JavaScript
           </motion.p>
+          
+          <motion.div
+            className="modern-hero__features"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            {features.map((feature, index) => (
+              <div className="modern-hero__feature" key={index}>
+                <div className="modern-hero__feature-icon">
+                  <Check size={16} />
+                </div>
+                <span className="modern-hero__feature-text">{feature}</span>
+              </div>
+            ))}
+          </motion.div>
           
           <motion.div 
             className="modern-hero__cta"
@@ -113,7 +149,8 @@ const ModernHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
-            <Button text="Get Started" isMain={true} />
+            <Button text="Start Coding" isMain={true} />
+            <Button text="View Challenges" />
           </motion.div>
         </div>
         
@@ -124,6 +161,38 @@ const ModernHero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="modern-hero__glow"></div>
+          <div className="modern-hero__code-window">
+            <div className="modern-hero__code-header">
+              <div className="modern-hero__code-dot"></div>
+              <div className="modern-hero__code-dot"></div>
+              <div className="modern-hero__code-dot"></div>
+            </div>
+            <div className="modern-hero__code-content">
+              {pythonCode.split('\n').map((line, i) => (
+                <div className="modern-hero__code-line" key={i}>
+                  <div className="modern-hero__code-number">{i + 1}</div>
+                  <div>
+                    {line
+                      .replace(/def|return|if|for|in|print/g, match => 
+                        `<span class="modern-hero__keyword">${match}</span>`)
+                      .replace(/quick_sort|len|split|join/g, match => 
+                        `<span class="modern-hero__function">${match}</span>`)
+                      .replace(/'[^']*'|"[^"]*"/g, match => 
+                        `<span class="modern-hero__string">${match}</span>`)
+                      .replace(/#.*/g, match => 
+                        `<span class="modern-hero__comment">${match}</span>`)
+                      .replace(/arr|pivot|left|middle|right|numbers|x/g, match => 
+                        `<span class="modern-hero__variable">${match}</span>`)
+                      .split(/<span|<\/span>/).map((part, j) => {
+                        if (j % 2 === 0) return part;
+                        return `<span${part}`;
+                      })
+                      .join('')}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 .modern-hero {
   position: relative;
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 100px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 @media (max-width: 1024px) {
@@ -34,6 +34,7 @@
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 4rem;
+    gap: 2rem;
   }
 }
 
@@ -44,7 +45,7 @@
 
 .modern-hero__logo-container {
   margin-bottom: 2rem;
-  max-width: 250px;
+  max-width: 220px;
 }
 
 @media (max-width: 1024px) {
@@ -58,14 +59,15 @@
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  background: linear-gradient(90deg, #ffffff, #b3b3ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
 }
 
 .modern-hero__title .accent {
-  color: #4D90D6;
+  background: linear-gradient(90deg, #00BFFF, #1E90FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.3));
 }
 
 @media (max-width: 768px) {
@@ -84,6 +86,36 @@
   font-size: 1.25rem;
   color: #a8b2d1;
   margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.modern-hero__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.modern-hero__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modern-hero__feature-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 191, 255, 0.1);
+  border-radius: 50%;
+  color: #00BFFF;
+}
+
+.modern-hero__feature-text {
+  font-size: 1rem;
+  color: #f0f0f0;
 }
 
 .modern-hero__cta {
@@ -103,22 +135,111 @@
     flex-direction: column;
     width: 100%;
   }
+  
+  .modern-hero__cta .button {
+    width: 100%;
+  }
 }
 
 .modern-hero__visual {
   flex: 1;
   position: relative;
   height: 500px;
-  max-width: 500px;
+  max-width: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(22, 33, 51, 0.8));
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
   .modern-hero__visual {
     height: 400px;
+    width: 100%;
   }
+}
+
+.modern-hero__code-window {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.modern-hero__code-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 6px;
+}
+
+.modern-hero__code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.modern-hero__code-dot:nth-child(1) {
+  background-color: #ff5f56;
+}
+
+.modern-hero__code-dot:nth-child(2) {
+  background-color: #ffbd2e;
+}
+
+.modern-hero__code-dot:nth-child(3) {
+  background-color: #27c93f;
+}
+
+.modern-hero__code-content {
+  color: #f0f0f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.5rem;
+  height: calc(100% - 40px);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.modern-hero__code-line {
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.modern-hero__code-number {
+  color: #666;
+  min-width: 2rem;
+  text-align: right;
+  margin-right: 1rem;
+  user-select: none;
+}
+
+.modern-hero__keyword {
+  color: #ff79c6;
+}
+
+.modern-hero__function {
+  color: #50fa7b;
+}
+
+.modern-hero__string {
+  color: #f1fa8c;
+}
+
+.modern-hero__comment {
+  color: #6272a4;
+}
+
+.modern-hero__variable {
+  color: #bd93f9;
 }
 
 .modern-hero__glow {
@@ -126,8 +247,9 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(77, 144, 214, 0.3) 0%, rgba(77, 144, 214, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.15) 0%, rgba(0, 191, 255, 0) 70%);
   animation: pulse 4s infinite alternate;
+  z-index: -1;
 }
 
 @keyframes pulse {
