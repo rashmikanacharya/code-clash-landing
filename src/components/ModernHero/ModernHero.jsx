@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
 import './ModernHero.css';
@@ -149,7 +150,9 @@ print(quick_sort(numbers))  # Output: [1, 1, 2, 3, 6, 8, 10]`;
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
-            <Button text="Start Coding" isMain={true} />
+            <Link to="/login">
+              <Button text="Get Started" isMain={true} />
+            </Link>
             <Button text="View Challenges" />
           </motion.div>
         </div>
