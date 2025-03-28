@@ -1,7 +1,7 @@
 
 .footer {
   position: relative;
-  background-color: #1E1E1E;
+  background-color: #222222;
   padding: 3rem 0 1rem;
   overflow: hidden;
 }
@@ -20,7 +20,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #4D90D6;
+  background-color: #3A78B5;
   filter: blur(5px);
 }
 
@@ -43,22 +43,24 @@
 }
 
 .footer__brand p {
-  color: #A0A0A0;
+  color: #888888;
   margin-top: 1rem;
   font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .footer__logo {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   color: #FFFFFF;
   margin-bottom: 1rem;
 }
 
 .footer__logo .blue-o {
-  color: #4D90D6;
+  color: #3A78B5;
 }
 
 .footer__links {
@@ -85,13 +87,14 @@
 }
 
 .footer__column ul li a {
-  color: #A0A0A0;
+  color: #888888;
   font-size: 0.875rem;
   transition: color 0.3s ease;
 }
 
 .footer__column ul li a:hover {
-  color: #4D90D6;
+  color: #3A78B5;
+  text-decoration: none;
 }
 
 .footer__bottom {
@@ -101,6 +104,6 @@
 }
 
 .footer__bottom p {
-  color: #A0A0A0;
+  color: #888888;
   font-size: 0.75rem;
 }

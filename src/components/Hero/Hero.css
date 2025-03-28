@@ -4,6 +4,7 @@
   min-height: 100vh;
   padding-top: 80px; /* Account for fixed header */
   overflow: hidden;
+  background-color: #f9f9f9;
 }
 
 .hero__canvas {
@@ -32,10 +33,12 @@
   margin-bottom: 1.5rem;
   line-height: 1.2;
   max-width: 800px;
+  color: #222222;
 }
 
 .hero__title span {
   display: inline;
+  color: #3A78B5;
 }
 
 @media (max-width: 639px) {
@@ -46,9 +49,10 @@
 
 .hero__subtitle {
   font-size: 1.25rem;
-  color: #A0A0A0;
+  color: #555555;
   max-width: 600px;
   margin-bottom: 3rem;
+  font-weight: 400;
 }
 
 @media (max-width: 639px) {

@@ -6,15 +6,14 @@
   justify-content: center;
   padding: 0.75rem 1.5rem;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  border-radius: 0.5rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #4D90D6;
-  color: #4D90D6;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  border: 1px solid #3A78B5;
+  color: #3A78B5;
+  font-size: 0.875rem;
   letter-spacing: 0.5px;
   overflow: hidden;
   z-index: 1;
@@ -27,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4D90D6;
+  background-color: #3A78B5;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: -1;
@@ -42,16 +41,16 @@
 }
 
 .button--main {
-  background-color: #4D90D6;
+  background-color: #3A78B5;
   border: none;
   color: #FFFFFF;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  box-shadow: 0 4px 15px rgba(77, 144, 214, 0.3);
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 4px rgba(58, 120, 181, 0.2);
 }
 
 .button--main::before {
-  background-color: #3A78B5;
+  background-color: #2A5F8C;
   transform: translateY(100%);
 }
 
@@ -60,18 +59,5 @@
 }
 
 .button__shine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: skewX(-20deg) translateX(-100px);
-  transition: none;
-  pointer-events: none;
-}
-
-.button:hover .button__shine {
-  transition: transform 0.8s ease;
-  transform: skewX(-20deg) translateX(300px);
+  display: none;
 }
