@@ -15,7 +15,7 @@ const Hero = () => {
     canvas.height = window.innerHeight;
     
     const particles = [];
-    const particleCount = 50;
+    const particleCount = 80;
     
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -23,9 +23,9 @@ const Hero = () => {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 2 + 0.5,
-        speedX: Math.random() * 1 - 0.5,
-        speedY: Math.random() * 1 - 0.5,
-        color: `rgba(77, 144, 214, ${Math.random() * 0.5 + 0.1})`
+        speedX: Math.random() * 0.8 - 0.4,
+        speedY: Math.random() * 0.8 - 0.4,
+        color: `rgba(0, 191, 255, ${Math.random() * 0.5 + 0.1})`
       });
     }
     
@@ -58,9 +58,9 @@ const Hero = () => {
           let dy = p.y - p2.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(77, 144, 214, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(0, 191, 255, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -99,10 +99,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span>Ignite your </span>
-          <span className="primary-color">code</span>
-          <span>, conquer the </span>
-          <span className="primary-color">arena</span>
+          <span>Master </span>
+          <span className="gradient-text">Programming</span>
+          <span>, Conquer the </span>
+          <span className="gradient-text">Digital Arena</span>
         </motion.h1>
         
         <motion.p 
@@ -111,7 +111,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         >
-          Master programming through interactive challenges and competitive coding battles
+          Elevate your coding skills through immersive challenges and competitive battles in our advanced learning environment
         </motion.p>
         
         <motion.div 
@@ -120,7 +120,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
         >
-          <Button text="Get Started" isMain={true} />
+          <Button text="Begin Your Journey" isMain={true} />
         </motion.div>
       </div>
     </section>

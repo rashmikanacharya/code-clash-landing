@@ -5,42 +5,42 @@
 
 @layer base {
   :root {
-    --background: 222 20% 18%;
+    --background: 222 47% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222 20% 18%;
+    --card: 222 47% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 20% 18%;
+    --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 208 52% 47%;
+    --primary: 195 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 18%;
+    --secondary: 217 33% 15%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 217 33% 18%;
+    --accent: 195 100% 50%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 213 27% 84%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 195 100% 50%;
     
-    --sidebar-background: 222 20% 18%;
+    --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 208 52% 47%;
+    --sidebar-primary: 195 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4% 16%;
     --sidebar-accent-foreground: 240 5% 96%;
     --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 195 100% 50%;
   }
 }
 
@@ -52,7 +52,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    background-color: #121212;
+    background-color: #0a0f1c;
     color: #f0f0f0;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: rgba(0, 191, 255, 0.3);
+    color: #ffffff;
   }
 }

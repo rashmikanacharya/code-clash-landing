@@ -11,13 +11,13 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #4D90D6;
-  color: #4D90D6;
+  border: 1px solid #00BFFF;
+  color: #00BFFF;
   font-size: 0.875rem;
   letter-spacing: 0.5px;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
 }
 
 .button::before {
@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #4D90D6, #6eb2fb);
+  background: linear-gradient(90deg, #00BFFF, #1E90FF);
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
@@ -36,7 +36,7 @@
 .button:hover {
   color: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(77, 144, 214, 0.3);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
 }
 
 .button:hover::before {
@@ -44,16 +44,16 @@
 }
 
 .button--main {
-  background: linear-gradient(90deg, #4D90D6, #6eb2fb);
+  background: linear-gradient(90deg, #00BFFF, #1E90FF);
   border: none;
   color: #FFFFFF;
   font-weight: 600;
   padding: 0.875rem 2.25rem;
-  box-shadow: 0 4px 14px rgba(77, 144, 214, 0.3);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
 }
 
 .button--main::before {
-  background: linear-gradient(90deg, #3a70a9, #4D90D6);
+  background: linear-gradient(90deg, #1E90FF, #00BFFF);
   transform: translateY(100%);
 }
 
