@@ -1,20 +1,20 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Swords, Check, ArrowRight } from 'lucide-react';
+import { Bot, Swords, Users, ArrowRight, Check } from 'lucide-react';
 import './Card.css';
 
-const Card = ({ title, description, icon, features, language, badge }) => {
+const Card = ({ title, description, icon, features, category, badge }) => {
   return (
     <motion.div 
-      className="card"
+      className={`card card--${category}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className={`card__language-badge card__language-badge--${language.toLowerCase()}`}>
-        {language}
+      <div className={`card__badge card__badge--${category}`}>
+        {badge}
       </div>
       
       <div className="card__icon-container">
@@ -48,37 +48,40 @@ const Card = ({ title, description, icon, features, language, badge }) => {
 const CardsSection = () => {
   const cards = [
     {
-      title: 'Python Mastery Path',
-      description: 'Master Python programming through our comprehensive curriculum designed for all skill levels.',
+      title: 'Solo Practice',
+      description: 'Enhance your coding skills at your own pace with adaptive challenges tailored to your skill level.',
       icon: <Bot size={32} />,
       features: [
-        'Data science and analysis',
-        'Web scraping and automation',
-        'Machine learning fundamentals'
+        'Personalized learning path',
+        'Instant feedback on solutions',
+        'Track your progress over time'
       ],
-      language: 'Python'
+      category: 'solo',
+      badge: 'Solo'
     },
     {
-      title: 'Java Development Track',
-      description: 'Build enterprise-grade applications and solve advanced algorithmic challenges.',
+      title: '1v1 Battles',
+      description: 'Test your skills against other programmers in real-time coding battles with competitive rankings.',
       icon: <Swords size={32} />,
       features: [
-        'Object-oriented programming',
-        'Spring Boot fundamentals',
-        'Concurrency and multithreading'
+        'Live competitive coding',
+        'Global leaderboards',
+        'Earn points and badges'
       ],
-      language: 'Java'
+      category: 'battle',
+      badge: '1v1'
     },
     {
-      title: 'JavaScript Expertise',
-      description: 'From front-end wizardry to full-stack mastery, elevate your JavaScript knowledge.',
-      icon: <Bot size={32} />,
+      title: 'Team Challenges',
+      description: 'Collaborate with other developers to solve complex problems and build real-world projects.',
+      icon: <Users size={32} />,
       features: [
-        'Modern front-end frameworks',
-        'Node.js and server-side JS',
-        'Real-time applications'
+        'Collaborative problem solving',
+        'Project-based learning',
+        'Code reviews and feedback'
       ],
-      language: 'JavaScript'
+      category: 'team',
+      badge: 'Team'
     }
   ];
   
@@ -94,7 +97,7 @@ const CardsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Language Tracks
+            Learning Modes
           </motion.span>
           
           <motion.h2 
@@ -104,7 +107,7 @@ const CardsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Master the Programming Language of Your Choice
+            Choose How You Want to Improve
           </motion.h2>
           
           <motion.p
@@ -114,7 +117,7 @@ const CardsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Choose your preferred language track and dive into specialized challenges, projects, and competitive coding battles.
+            Whether you prefer solo practice, competitive battles, or team collaboration, we have the perfect learning environment for you.
           </motion.p>
         </div>
         
@@ -126,7 +129,8 @@ const CardsSection = () => {
               description={card.description} 
               icon={card.icon}
               features={card.features}
-              language={card.language}
+              category={card.category}
+              badge={card.badge}
             />
           ))}
         </div>

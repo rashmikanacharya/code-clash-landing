@@ -102,10 +102,34 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Card types */
+.card--solo {
   border-color: rgba(0, 191, 255, 0.3);
 }
 
-.card__language-badge {
+.card--solo:hover {
+  border-color: rgba(0, 191, 255, 0.5);
+}
+
+.card--battle {
+  border-color: rgba(255, 76, 76, 0.3);
+}
+
+.card--battle:hover {
+  border-color: rgba(255, 76, 76, 0.5);
+}
+
+.card--team {
+  border-color: rgba(46, 213, 115, 0.3);
+}
+
+.card--team:hover {
+  border-color: rgba(46, 213, 115, 0.5);
+}
+
+.card__badge {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -117,22 +141,22 @@
   text-transform: uppercase;
 }
 
-.card__language-badge--python {
-  background-color: rgba(53, 114, 165, 0.2);
-  color: #3572a5;
-  border: 1px solid rgba(53, 114, 165, 0.3);
+.card__badge--solo {
+  background-color: rgba(0, 191, 255, 0.2);
+  color: #00BFFF;
+  border: 1px solid rgba(0, 191, 255, 0.3);
 }
 
-.card__language-badge--java {
-  background-color: rgba(176, 114, 25, 0.2);
-  color: #b07219;
-  border: 1px solid rgba(176, 114, 25, 0.3);
+.card__badge--battle {
+  background-color: rgba(255, 76, 76, 0.2);
+  color: #ff4c4c;
+  border: 1px solid rgba(255, 76, 76, 0.3);
 }
 
-.card__language-badge--javascript {
-  background-color: rgba(241, 224, 90, 0.2);
-  color: #f1e05a;
-  border: 1px solid rgba(241, 224, 90, 0.3);
+.card__badge--team {
+  background-color: rgba(46, 213, 115, 0.2);
+  color: #2ed573;
+  border: 1px solid rgba(46, 213, 115, 0.3);
 }
 
 .card__icon-container {
@@ -148,8 +172,26 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.card--battle .card__icon-container {
+  background: linear-gradient(145deg, rgba(255, 76, 76, 0.15), rgba(255, 105, 105, 0.15));
+  border: 1px solid rgba(255, 76, 76, 0.2);
+}
+
+.card--team .card__icon-container {
+  background: linear-gradient(145deg, rgba(46, 213, 115, 0.15), rgba(76, 209, 135, 0.15));
+  border: 1px solid rgba(46, 213, 115, 0.2);
+}
+
 .card__icon {
   color: #00BFFF;
+}
+
+.card--battle .card__icon {
+  color: #ff4c4c;
+}
+
+.card--team .card__icon {
+  color: #2ed573;
 }
 
 .card__title {
@@ -182,6 +224,14 @@
   flex-shrink: 0;
 }
 
+.card--battle .card__feature-icon {
+  color: #ff4c4c;
+}
+
+.card--team .card__feature-icon {
+  color: #2ed573;
+}
+
 .card__feature-text {
   font-size: 0.875rem;
   color: #f0f0f0;
@@ -200,9 +250,25 @@
   margin-right: 0.5rem;
 }
 
+.card--battle .card__arrow-text {
+  color: #ff4c4c;
+}
+
+.card--team .card__arrow-text {
+  color: #2ed573;
+}
+
 .card__arrow {
   color: #00BFFF;
   transition: transform 0.3s ease;
+}
+
+.card--battle .card__arrow {
+  color: #ff4c4c;
+}
+
+.card--team .card__arrow {
+  color: #2ed573;
 }
 
 .card:hover .card__arrow {

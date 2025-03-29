@@ -82,19 +82,6 @@ const ModernHero = () => {
     'Battle against other programmers'
   ];
 
-  const pythonCode = `def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
-
-# Example usage
-numbers = [3, 6, 8, 10, 1, 2, 1]
-print(quick_sort(numbers))  # Output: [1, 1, 2, 3, 6, 8, 10]`;
-
   return (
     <section className="modern-hero">
       <canvas ref={canvasRef} className="modern-hero__canvas"></canvas>
@@ -164,35 +151,30 @@ print(quick_sort(numbers))  # Output: [1, 1, 2, 3, 6, 8, 10]`;
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="modern-hero__glow"></div>
-          <div className="modern-hero__code-window">
-            <div className="modern-hero__code-header">
-              <div className="modern-hero__code-dot"></div>
-              <div className="modern-hero__code-dot"></div>
-              <div className="modern-hero__code-dot"></div>
+          <div className="illustration-3d">
+            <div className="cube">
+              <div className="cube__face cube__face--front"></div>
+              <div className="cube__face cube__face--back"></div>
+              <div className="cube__face cube__face--right"></div>
+              <div className="cube__face cube__face--left"></div>
+              <div className="cube__face cube__face--top"></div>
+              <div className="cube__face cube__face--bottom"></div>
             </div>
-            <div className="modern-hero__code-content">
-              {pythonCode.split('\n').map((line, i) => (
-                <div className="modern-hero__code-line" key={i}>
-                  <div className="modern-hero__code-number">{i + 1}</div>
-                  <div>
-                    {line
-                      .replace(/def|return|if|for|in|print/g, match => 
-                        `<span class="modern-hero__keyword">${match}</span>`)
-                      .replace(/quick_sort|len|split|join/g, match => 
-                        `<span class="modern-hero__function">${match}</span>`)
-                      .replace(/'[^']*'|"[^"]*"/g, match => 
-                        `<span class="modern-hero__string">${match}</span>`)
-                      .replace(/#.*/g, match => 
-                        `<span class="modern-hero__comment">${match}</span>`)
-                      .replace(/arr|pivot|left|middle|right|numbers|x/g, match => 
-                        `<span class="modern-hero__variable">${match}</span>`)
-                      .split(/<span|<\/span>/).map((part, j) => {
-                        if (j % 2 === 0) return part;
-                        return `<span${part}`;
-                      })
-                      .join('')}
-                  </div>
-                </div>
+            <div className="sphere"></div>
+            <div className="pyramid">
+              <div className="pyramid__face pyramid__face--front"></div>
+              <div className="pyramid__face pyramid__face--right"></div>
+              <div className="pyramid__face pyramid__face--left"></div>
+              <div className="pyramid__face pyramid__face--bottom"></div>
+            </div>
+            <div className="code-particles">
+              {Array(15).fill().map((_, i) => (
+                <div key={i} className="code-particle" style={{
+                  '--delay': `${i * 0.2}s`,
+                  '--size': `${Math.random() * 20 + 10}px`,
+                  '--x': `${Math.random() * 100}%`,
+                  '--y': `${Math.random() * 100}%`,
+                }}></div>
               ))}
             </div>
           </div>
