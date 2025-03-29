@@ -1,0 +1,123 @@
+
+.hackathon-svg-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hackathon-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(20, 20, 35, 0.8), rgba(10, 15, 28, 0.8));
+  z-index: -1;
+}
+
+.hackathon-svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Floating code boxes */
+.floating-box {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(20, 30, 50, 0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floating-box--python {
+  top: 15%;
+  left: 10%;
+  border-left: 3px solid #306998;
+}
+
+.floating-box--java {
+  top: 25%;
+  right: 15%;
+  border-left: 3px solid #f89820;
+}
+
+.floating-box--js {
+  bottom: 20%;
+  left: 20%;
+  border-left: 3px solid #f7df1e;
+}
+
+.floating-box__content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floating-box__icon {
+  flex-shrink: 0;
+}
+
+.floating-box--python .floating-box__icon {
+  color: #306998;
+}
+
+.floating-box--java .floating-box__icon {
+  color: #f89820;
+}
+
+.floating-box--js .floating-box__icon {
+  color: #f7df1e;
+}
+
+.floating-box__text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+/* Animation timing for different elements */
+.developer--left {
+  animation-delay: 0.2s;
+}
+
+.developer--right {
+  animation-delay: 0.7s;
+}
+
+/* Laptop icon at bottom */
+.laptop-icon {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  color: #00BFFF;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-box {
+    display: none;
+  }
+  
+  .hackathon-svg {
+    max-width: 100%;
+  }
+}

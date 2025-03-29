@@ -1,10 +1,10 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
+import HackathonSVG from '../HackathonSVG/HackathonSVG';
 import './ModernHero.css';
 
 const ModernHero = () => {
@@ -75,12 +75,6 @@ const ModernHero = () => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
-  
-  const features = [
-    'Master Python, Java, JavaScript, and more',
-    'Real-time feedback on your code',
-    'Battle against other programmers'
-  ];
 
   return (
     <section className="modern-hero">
@@ -115,22 +109,6 @@ const ModernHero = () => {
             Master programming through interactive challenges and competitive coding battles with Python, Java, and JavaScript
           </motion.p>
           
-          <motion.div
-            className="modern-hero__features"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-          >
-            {features.map((feature, index) => (
-              <div className="modern-hero__feature" key={index}>
-                <div className="modern-hero__feature-icon">
-                  <Check size={16} />
-                </div>
-                <span className="modern-hero__feature-text">{feature}</span>
-              </div>
-            ))}
-          </motion.div>
-          
           <motion.div 
             className="modern-hero__cta"
             initial={{ opacity: 0, y: 20 }}
@@ -151,33 +129,7 @@ const ModernHero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="modern-hero__glow"></div>
-          <div className="illustration-3d">
-            <div className="cube">
-              <div className="cube__face cube__face--front"></div>
-              <div className="cube__face cube__face--back"></div>
-              <div className="cube__face cube__face--right"></div>
-              <div className="cube__face cube__face--left"></div>
-              <div className="cube__face cube__face--top"></div>
-              <div className="cube__face cube__face--bottom"></div>
-            </div>
-            <div className="sphere"></div>
-            <div className="pyramid">
-              <div className="pyramid__face pyramid__face--front"></div>
-              <div className="pyramid__face pyramid__face--right"></div>
-              <div className="pyramid__face pyramid__face--left"></div>
-              <div className="pyramid__face pyramid__face--bottom"></div>
-            </div>
-            <div className="code-particles">
-              {Array(15).fill().map((_, i) => (
-                <div key={i} className="code-particle" style={{
-                  '--delay': `${i * 0.2}s`,
-                  '--size': `${Math.random() * 20 + 10}px`,
-                  '--x': `${Math.random() * 100}%`,
-                  '--y': `${Math.random() * 100}%`,
-                }}></div>
-              ))}
-            </div>
-          </div>
+          <HackathonSVG />
         </motion.div>
       </div>
     </section>
