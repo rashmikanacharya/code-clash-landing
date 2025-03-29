@@ -1,10 +1,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Swords, ArrowRight, Check } from 'lucide-react';
+import { Bot, Swords } from 'lucide-react';
 import './Card.css';
 
-const Card = ({ title, description, icon, features, category, badge }) => {
+const Card = ({ title, description, icon, category, badge }) => {
   return (
     <motion.div 
       className={`card card--${category}`}
@@ -23,24 +23,6 @@ const Card = ({ title, description, icon, features, category, badge }) => {
       
       <h3 className="card__title">{title}</h3>
       <p className="card__description">{description}</p>
-      
-      <div className="card__features">
-        {features.map((feature, index) => (
-          <div className="card__feature" key={index}>
-            <div className="card__feature-icon">
-              <Check size={16} />
-            </div>
-            <span className="card__feature-text">{feature}</span>
-          </div>
-        ))}
-      </div>
-      
-      <div className="card__arrow-container">
-        <span className="card__arrow-text">Learn more</span>
-        <div className="card__arrow">
-          <ArrowRight size={16} />
-        </div>
-      </div>
     </motion.div>
   );
 };
@@ -51,11 +33,6 @@ const CardsSection = () => {
       title: 'Solo Practice',
       description: 'Enhance your coding skills at your own pace with adaptive challenges tailored to your skill level.',
       icon: <Bot size={32} />,
-      features: [
-        'Personalized learning path',
-        'Instant feedback on solutions',
-        'Track your progress over time'
-      ],
       category: 'solo',
       badge: 'Solo'
     },
@@ -63,11 +40,6 @@ const CardsSection = () => {
       title: '1v1 Battles',
       description: 'Test your skills against other programmers in real-time coding battles with competitive rankings.',
       icon: <Swords size={32} />,
-      features: [
-        'Live competitive coding',
-        'Global leaderboards',
-        'Earn points and badges'
-      ],
       category: 'battle',
       badge: '1v1'
     }
@@ -116,7 +88,6 @@ const CardsSection = () => {
               title={card.title} 
               description={card.description} 
               icon={card.icon}
-              features={card.features}
               category={card.category}
               badge={card.badge}
             />
