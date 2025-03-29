@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Swords, Users, ArrowRight, Check } from 'lucide-react';
+import { Bot, Swords, ArrowRight, Check } from 'lucide-react';
 import './Card.css';
 
 const Card = ({ title, description, icon, features, category, badge }) => {
@@ -70,18 +70,6 @@ const CardsSection = () => {
       ],
       category: 'battle',
       badge: '1v1'
-    },
-    {
-      title: 'Team Challenges',
-      description: 'Collaborate with other developers to solve complex problems and build real-world projects.',
-      icon: <Users size={32} />,
-      features: [
-        'Collaborative problem solving',
-        'Project-based learning',
-        'Code reviews and feedback'
-      ],
-      category: 'team',
-      badge: 'Team'
     }
   ];
   
@@ -117,7 +105,7 @@ const CardsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Whether you prefer solo practice, competitive battles, or team collaboration, we have the perfect learning environment for you.
+            Whether you prefer solo practice or competitive battles, we have the perfect learning environment for you.
           </motion.p>
         </div>
         
